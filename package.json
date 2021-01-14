@@ -1,0 +1,29 @@
+{
+  "name": "currency-rates-api-enye-",
+  "version": "1.0.0",
+  "description": "currency rates api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spiritbuilder/Currency-rates-api-Enye-.git"
+  },
+  "keywords": [
+    "currency",
+    "exchange",
+    "rates"
+  ],
+  "author": "olaifa Timothy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spiritbuilder/Currency-rates-api-Enye-/issues"
+  },
+  "homepage": "https://github.com/spiritbuilder/Currency-rates-api-Enye-#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  }
+}
