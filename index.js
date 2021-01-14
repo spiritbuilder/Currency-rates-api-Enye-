@@ -49,7 +49,7 @@ const getRates = async (base, currency) => {
 
 
 app.get('/',(req,res)=>{
-    res.send(`Welcome to currency converter Api try ${url}`)
+    res.send(`Welcome to currency converter Api try please add "/api/rates" to the current url`)
 } )
 
 app.get('/api/rates',async(req,res)=>{

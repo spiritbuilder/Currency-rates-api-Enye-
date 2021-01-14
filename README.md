@@ -1,2 +1,2 @@
-# Currency-rates-api-Enye-
+# Currency-rates-api (Enye)
 Phase 1.2
