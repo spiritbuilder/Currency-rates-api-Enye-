@@ -4,7 +4,7 @@ const express = require("express")
 const axios = require ("axios");
 const app = express();
 const port = process.env.PORT || 3000;
-let url = "https://api.exchangeratesapi.io/latest";
+
 
 
 const exchangeRate = async (base, currency) => {
@@ -15,15 +15,9 @@ const exchangeRate = async (base, currency) => {
         status:""
     }
     try {
+
         
-        if(base&&currency){
-        url =  url+`?base=${base}&symbols=${currency}`;
-        
-        }else if(base&&!currency){
-            url =  url+`?base=${base}`
-        }else if (!base&&currency){
-            url =  url+`?symbols=${currency}`
-        }
+        const url = `https://api.exchangeratesapi.io/latest?base=${base?base:""}&symbols=${currency?currency:""}`;
         const res =  await axios.get(url);
        
         response.data = res.data;
@@ -32,18 +26,16 @@ const exchangeRate = async (base, currency) => {
         response.error =  error.response.data;
         response.status = 400;
     }
-    
+    console.log("this is the first resp", response)
     return response;
 }
 
 const getRates = async (base, currency) => {
     
     const response2 = await exchangeRate(base, currency);
+    console.log(response2);
+    return  response2;
     
-    return  response2
-      
-    ;
-    console.log(response)
 };
 
 
@@ -57,7 +49,7 @@ app.get('/api/rates',async(req,res)=>{
    let myres
    console.log(resp);
     console.log(req.query);
-    if(!resp.error){
+    if(resp.data){
          myres = {
             results:{
                 base:resp.data.base,
