@@ -30,7 +30,7 @@ const exchangeRate = async (base, currency) => {
     } catch (error) {
         console.log("error is ", error.response.data)
         response.error =  error.response.data;
-        response.staus = 400;
+        response.status = 400;
     }
     
     return response;
